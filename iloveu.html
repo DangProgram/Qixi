@@ -9,6 +9,29 @@
 </head>
 
 <body>
+    
+    
+    <div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"url(./img/1.jpeg)",
+				"url(./img/2.jpg)",
+				"url(./img/3.jpg)",
+                "url(./img/4.jpg)"
+			)
+		//--><!]]>
+	</script>
+</div>
+    
+    
     <audio src="./Pajaro Sunrise - Romeo's Tune.mp3" autoplay="true" loop="loop"></audio>
     <div id="back">
         <div class="mask"></div>
