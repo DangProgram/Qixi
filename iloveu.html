@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    preloadimages(['1.PNG', '2.JPG', '3.png', '3.png', '3.png', '4.JPG', '5.jpg', '6.jpg', '7.jpg', '8.jpg'])
     <audio src="./Pajaro Sunrise - Romeo's Tune.mp3" autoplay="true" loop="loop"></audio>
     <div id="back">
         <div class="mask"></div>
@@ -141,6 +142,14 @@
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/count-time.js"></script>
     <script>
+    function preloadimages(arr){
+    var newimages=[]
+    var arr=(typeof arr!="object")? [arr] : arr  //确保参数总是数组
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+        }
+    }
     $(function() {
         //设置起始日期
         countTime('2016/11/02 12:00', 'day', 'hour', 'minute', 'second');
