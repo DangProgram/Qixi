@@ -9,29 +9,6 @@
 </head>
 
 <body>
-    
-    
-    <div class="hidden">
-	<script type="text/javascript">
-		<!--//--><![CDATA[//><!--
-			var images = new Array()
-			function preload() {
-				for (i = 0; i < preload.arguments.length; i++) {
-					images[i] = new Image()
-					images[i].src = preload.arguments[i]
-				}
-			}
-			preload(
-				"url(./img/1.jpeg)",
-				"url(./img/2.jpg)",
-				"url(./img/3.jpg)",
-                "url(./img/4.jpg)"
-			)
-		//--><!]]>
-	</script>
-</div>
-    
-    
     <audio src="./Pajaro Sunrise - Romeo's Tune.mp3" autoplay="true" loop="loop"></audio>
     <div id="back">
         <div class="mask"></div>
@@ -78,6 +55,33 @@
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/count-time.js"></script>
     <script>
+	    
+	    function preloader() {  
+    if (document.images) {  
+        var img1 = new Image();  
+        var img2 = new Image();  
+        var img3 = new Image();  
+        img1.src = "url(./img/1.jpeg)";  
+        img2.src = "url(./img/1.jpeg)";  
+        img3.src = "url(./img/1.jpeg)";  
+    }  
+}  
+function addLoadEvent(func) {  
+    var oldonload = window.onload;  
+    if (typeof window.onload != 'function') {  
+        window.onload = func;  
+    } else {  
+        window.onload = function() {  
+            if (oldonload) {  
+                oldonload();  
+            }  
+            func();  
+        }  
+    }  
+}  
+addLoadEvent(preloader);
+	    
+	    
     $(function() {
         //设置起始日期
         countTime('2016/11/02 12:00', 'day', 'hour', 'minute', 'second');
